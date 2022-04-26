@@ -1,14 +1,14 @@
 package mvcpackage.model.dao;
 
-import mvcpackage.model.bean.Login;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LoginDAO {
+import mvcpackage.model.bean.Login;
+
+public class LoginDAO { 
 
 	public static boolean validate(Login loginBean) throws ClassNotFoundException {
 		boolean status = false;
@@ -33,8 +33,8 @@ public class LoginDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace(System.err);
-			System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-			System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
+			System.err.println("SQLState: " + e.getSQLState());
+			System.err.println("Error Code: " + e.getErrorCode());
 			System.err.println("Message: " + e.getMessage());
 
 		} finally {
